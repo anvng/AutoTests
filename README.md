@@ -23,7 +23,7 @@ This project is a GUI application that provides functionalities for loading log 
 
 1. Clone the repository:
    ```
-   git clone git@github.com:anvng/AutomotiveLogTool.git
+   git clone https://github.com/anvng/AutomotiveLogTool.git
    ```
 2. Navigate to the project directory:
    ```
