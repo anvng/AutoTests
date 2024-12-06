@@ -1,16 +1,18 @@
-
-from PyQt5 import QtWidgets, uic, QtCore
-from parser.log_parser import parse_log
-from parser.dbc_parser import load_dbc
-from validator.data_validator import validate_data
-from reporter.report_generator import generate_report
+from PyQt6 import uic
 import os
+
+from PyQt6.uic.uiparser import QtWidgets
+
+from ..parser.log_parser import parse_log
+from ..parser.dbc_parser import load_dbc
+from reporter.report_generator import generate_report
+from validator.data_validator import validate_data
+
 
 class MainGUI(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainGUI, self).__init__()
-        uic.loadUi('gui/ui/main_window.ui', self)
-        QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_SharedOpenGLContext)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), "ui/main_window.ui"), self)
 
         # Connect buttons to functions
         self.loadLogButton.clicked.connect(self.load_log_file)
